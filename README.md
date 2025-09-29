@@ -1,116 +1,144 @@
-# 🚀 3D Developer Portfolio
+# 🚀 Portfolio Website
 
-A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects — designed to help you stand out and showcase your skills creatively.
+A modern and responsive personal portfolio website built with React and Tailwind CSS. This project showcases my skills, projects, and experiences in a visually appealing and interactive way.
 
-![3d Portfolio Screenshot GitHub](https://github.com/user-attachments/assets/9b0ed20e-074e-4f2a-81d8-20c9da751e9e)
+## ✨ Key Features
 
----
+- **Responsive Design:** Adapts seamlessly to different screen sizes, ensuring a consistent experience across devices.
+- **Interactive UI:** Engaging user interface with smooth animations and transitions using `motion/react` and GSAP.
+- **Project Showcase:** Highlights my projects with detailed descriptions, technologies used, and live demos.
+- **Experience Timeline:** Presents my professional experience in a clear and chronological timeline.
+- **Contact Form:** Allows visitors to easily send me messages via email using EmailJS.
+- **Particle Background:** A visually appealing particle background effect using a custom `Particles` component.
+- **Animated Image Preview:** A mouse-following image preview in the Projects section.
+- **3D Globe Visualization:** An interactive 3D globe in the About Me section.
 
-## 📚 Table of Contents
+## 🛠️ Tech Stack
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Assets](#-assets)
-- [Contact Me](#-contact-me)
-- [Suggestions or Feedback](#-suggestions-or-feedback)
-- [Like This Project?](#-like-this-project)
+- **Frontend:**
+    - React
+    - Tailwind CSS
+    - JavaScript (ES6+)
+    - HTML
+    - CSS
+- **UI Libraries & Frameworks:**
+    - `motion/react` (Framer Motion): For animations and transitions.
+    - `@react-three/fiber`: A React renderer for Three.js.
+    - `@react-three/drei`: Helpers and abstractions for React Three Fiber.
+    - `react-responsive`: For media query handling.
+    - `react-syntax-highlighter`: For syntax highlighting.
+    - `react-type-animation`: For typing animations.
+    - `tailwind-merge`: Utility for merging Tailwind CSS class names.
+    - `@gsap/react`: For using GSAP (GreenSock Animation Platform) with React.
+- **3D Libraries:**
+    - `three`: The Three.js library.
+    - `cobe`: A library for creating interactive 3D globes.
+    - `maath`: Math utilities.
+- **Email:**
+    - `@emailjs/browser`: For sending emails from the browser.
+- **Build Tools:**
+    - Vite
+- **Code Quality:**
+    - ESLint
+- **Other:**
+    - `@tailwindcss/vite`: Vite plugin for Tailwind CSS.
+    - `@types/three`: TypeScript definitions for Three.js.
 
----
+## 📦 Getting Started
 
-## ✨ Features
+Follow these steps to set up the project locally:
 
-- 🔥 3D visuals powered by **React Three Fiber** and **Drei**
-- ⚡ Smooth transitions and scroll-based animations using **Framer Motion**
-- 🎨 Clean, responsive UI with **TailwindCSS**
-- 💌 Working contact form using **EmailJS**
-- 🧱 Beautiful UI enhancements with **Aceternity UI** and **Magic UI**
-- 🚀 Lightning-fast development with **Vite**
+### Prerequisites
 
----
+- Node.js (v18 or higher)
+- npm or yarn
 
-## 🛠 Tech Stack
+### Installation
 
-| Tech              | Description                           |
-|-------------------|---------------------------------------|
-| React             | Front-end JavaScript library          |
-| Vite              | Fast bundler and dev environment      |
-| TailwindCSS       | Utility-first CSS framework           |
-| React Three Fiber | 3D rendering with Three.js in React   |
-| Drei              | Helpers and abstractions for R3F      |
-| Framer Motion     | Animation library for React           |
-| EmailJS           | Form handling and email integration   |
-| Aceternity UI     | Custom UI components                  |
-| Magic UI          | Prebuilt UI elements and design extras|
+1.  Clone the repository:
 
----
+    ```bash
+    git clone <repository-url>
+    ```
 
-## 📁 Project Structure
+2.  Navigate to the project directory:
 
-```bash
-├── public/
-│   ├── assets/             # Images, textures, models
-│   ├── models/             # 3D Astronaut model
-│   └── vite.svg
-├── src/
-│   ├── components/         # Reusable components
-│   ├── constants/          # Reusable datas
-│   ├── sections/           # Portfolio sections (Hero, About, etc.)
-│   ├── App.jsx             # Main app file
-│   ├── index.css           # Tailwind css
-│   └── main.jsx            # Entry point
+    ```bash
+    cd <project-directory>
+    ```
+
+3.  Install dependencies:
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Running Locally
+
+1.  Start the development server:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+2.  Open your browser and navigate to the address provided by Vite (usually `http://localhost:5173`).
+
+## 💻 Project Structure
+
+```
+📂 portfolio-website
+├── 📂 src
+│   ├── 📂 components
+│   │   ├── Alert.jsx
+│   │   ├── Card.jsx
+│   │   ├── CopyEmailButton.jsx
+│   │   ├── FrameWorks.jsx
+│   │   ├── globe.jsx
+│   │   ├── ParallaxBackground.jsx
+│   │   ├── CustomBackground.jsx
+│   │   ├── Project.jsx
+│   │   └── Timeline.jsx
+│   ├── 📂 constants
+│   │   └── index.js
+│   ├── 📂 sections
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Experiences.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Projects.jsx
+│   │   └── Navbar.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 ├── tailwind.config.js
-└── vite.config.js
+├── vite.config.js
+├── package.json
+├── README.md
+└── index.html
 ```
 
----
+## 📸 Screenshots
 
-## 🚀 Getting Started
-1. Clone the Repository
-```bash
-git clone https://github.com/Ali-Sanati/Portfolio.git
-cd Portfolio
-```
-2. Install Dependencies
-```bash
-npm install
-```
-3. Run the Development Server
-```bash
-npm run dev
-```
-The app will be available at http://localhost:5173.
 
----
 
-## 🔗 Assets
-Assets used in the project can be found [here](https://github.com/user-attachments/files/19820923/public.zip)
+## 🤝 Contributing
 
----
+Contributions are welcome! Please follow these steps:
 
-## 📬 Contact Me
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/) 
-[![Static Badge](https://img.shields.io/badge/Youtube-%23FF0033?style=flat&logo=youtube)](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/) 
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes and commit them with descriptive messages.
+4.  Push your changes to your fork.
+5.  Submit a pull request.
 
----
+## 📬 Contact
 
-## 💡 Suggestions or Feedback?
-Leave a comment on the [YouTube video](https://youtu.be/S9UQItTpwUQ) or open an issue here on GitHub.<br/>
-👉 What should I build next?
+If you have any questions or suggestions, feel free to contact me at [lunaworku@gmail.com]
 
-- A beautiful Landing Page
+## 💖 Thanks
 
-- A complete E-commerce site
-
-- A fun App Clone (YouTube, Netflix, etc.)
-
-Or another interactive Portfolio
-
-Let me know!
-
----
-
-## ⭐ Like This Project?
-Star the repo and [subscribe](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA??sub_confirmation=1) to the YouTube channel for more dev content!
+Thank you for checking out my portfolio website! I hope you find it informative and visually appealing.
