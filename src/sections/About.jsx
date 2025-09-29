@@ -20,7 +20,7 @@ const About = () => {
             <p className="headtext">Hi, I&apos;m Betelhem Worku</p>
             <p className="subtext">
               Over the past few years, I&apos;ve been building full-stack web applications 
-              with React, Laravel, and MySQL — from property-broker platforms like EthioHomeHub 
+              with React, Laravel, and MySQL from property-broker platforms like EthioHomeHub 
               to real-time dashboards and AI-powered tools. I also work with Odoo ERP development.
             </p>
           </div>

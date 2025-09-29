@@ -1,14 +1,14 @@
 import { OrbitingCircles } from "./OrbitingCircles";
+import PropTypes from 'prop-types';
 
 export function Frameworks() {
   const skills = [
-    "auth0",
-    "blazor",
-    "cplusplus",
-    "csharp",
+    "java",
+    "php",
+    "laravel",
     "css3",
     "dotnet",
-    "dotnetcore",
+    "reactjs",
     "git",
     "html5",
     "javascript",
@@ -17,7 +17,12 @@ export function Frameworks() {
     "sqlite",
     "tailwindcss",
     "vitejs",
-    "wordpress",
+    "firebase",
+    "mysql",
+    "python",
+    "docker",
+    "postgresql",
+    "figma",
   ];
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
@@ -38,3 +43,7 @@ export function Frameworks() {
 const Icon = ({ src }) => (
   <img src={src} className="duration-200 rounded-sm hover:scale-110" />
 );
+
+Icon.propTypes = {
+  src: PropTypes.string.isRequired,
+};
