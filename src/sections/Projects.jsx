@@ -1,34 +1,62 @@
 import { useState } from "react";
-import Project from "../components/Project";
 import { myProjects } from "../constants";
-import { motion, useMotionValue, useSpring } from "motion/react";
+
 const Projects = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { damping: 10, stiffness: 50 });
-  const springY = useSpring(y, { damping: 10, stiffness: 50 });
-  const handleMouseMove = (e) => {
-    x.set(e.clientX + 20);
-    y.set(e.clientY + 20);
-  };
-  const [preview, setPreview] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState(null);
+
   return (
-    <section
-      onMouseMove={handleMouseMove}
-      className="relative c-space section-spacing"
-    >
+    <section className="relative c-space section-spacing">
       <h2 className="text-heading">My Selected Projects</h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
-      {myProjects.map((project) => (
-        <Project key={project.id} {...project} setPreview={setPreview} />
-      ))}
-      {preview && (
-        <motion.img
-          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
-          src={preview}
-          style={{ x: springX, y: springY }}
-        />
-      )}
+      
+      {/* Project Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {myProjects.slice(0, 3).map((project) => (
+          <div
+            key={project.id}
+            className="project-card group"
+            onMouseEnter={() => setHoveredProject(project.id)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
+            {/* Project Image */}
+            <div className="relative overflow-hidden rounded-t-lg">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute top-4 right-4">
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Content */}
+            <div className="p-6 bg-gradient-to-b from-transparent to-black/20 rounded-b-lg">
+              <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+              
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Technology Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag.id}
+                    className="px-3 py-1 bg-white/10 backdrop-blur-sm text-white text-xs rounded-full font-medium border border-white/20"
+                  >
+                    #{tag.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

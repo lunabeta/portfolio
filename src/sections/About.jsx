@@ -77,23 +77,23 @@ const About = () => {
             />
           </div>
         </div>
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
+        {/* Grid 3 - Glassmorphic */}
+        <div className="grid-3 glassmorphic-card">
           <div className="z-10 w-[50%]">
-            <p className="headtext">Time Zone</p>
+            <p className="headtext">Availability</p>
             <p className="subtext">
-              I&apos;m based in Mars, and open to remote work worldwide
+              I can work anytime, flexible schedule for your project needs
             </p>
           </div>
           <figure className="absolute left-[30%] top-[10%]">
             <Globe />
           </figure>
         </div>
-        {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
+        {/* Grid 4 - Glassmorphic */}
+        <div className="grid-4 glassmorphic-card">
           <div className="flex flex-col items-center justify-center gap-4 size-full">
             <p className="text-center headtext">
-              Do you want to start a project together?
+              Need to build something amazing?
             </p>
             <CopyEmailButton />
           </div>

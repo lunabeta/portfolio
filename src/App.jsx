@@ -1,4 +1,4 @@
-import Particles from "./components/Particles"; // Make sure the path is correct
+import Particles from "./components/Particles";
 import Navbar from "./sections/navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -6,6 +6,7 @@ import Projects from "./sections/Projects";
 import Experiences from "./sections/Experiences";
 import Contact from "./sections/Contact";
 import Footer from './sections/Footer';
+import { ScrollReveal } from "./components/ScrollReveal";
 
 const App = () => {
   return (
@@ -20,11 +21,21 @@ const App = () => {
       />
       <Navbar />
       <Hero />
-      <About />
-      <Projects />
-      <Experiences />
-      <Contact />
-      <Footer/>
+      <ScrollReveal animation="fadeInUp" duration={1.2}>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.2}>
+        <Projects />
+      </ScrollReveal>
+      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.4}>
+        <Experiences />
+      </ScrollReveal>
+      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.6}>
+        <Contact />
+      </ScrollReveal>
+      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.8}>
+        <Footer />
+      </ScrollReveal>
     </div>
   );
 };
