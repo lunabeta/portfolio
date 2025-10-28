@@ -8,107 +8,99 @@ const About = () => {
   const grid2Container = useRef();
   return (
     <section className="c-space section-spacing" id="about">
-      <h2 className="text-heading">About Me</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-        {/* Grid 1 */}
-        <div className="flex items-end grid-default-color grid-1">
-          <img
-            src="assets/coding-pov.png"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
-          />
-          <div className="z-10">
-            <p className="headtext">Hi, I&apos;m Betelhem Worku</p>
-            <p className="subtext">
-              Over the past few years, I&apos;ve been building full-stack web applications 
-              with React, Laravel, and MySQL from property-broker platforms like EthioHomeHub 
-              to real-time dashboards and AI-powered tools. I also work with Odoo ERP development.
-            </p>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {/* Left Column - Profile Image */}
+          <div className="lg:col-span-1">
+            <div className="w-full h-80 rounded-2xl overflow-hidden">
+              <img 
+                src="/assets/profilepic.jpg" 
+                alt="Betelhem Worku" 
+                className="w-full h-full object-cover rounded-2xl"
+                onError={(e) => {
+                  // Fallback to placeholder if image doesn't exist
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl flex items-center justify-center" style={{display: 'none'}}>
+                <div className="text-center text-white">
+                  <div className="w-32 h-32 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-4xl font-bold">BW</span>
+                  </div>
+                  <p className="text-lg font-semibold">Profile Picture</p>
+                  <p className="text-sm opacity-80">Add your photo here</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
-        </div>
-        {/* Grid 2 */}
-        <div className="grid-default-color grid-2">
-          <div
-            ref={grid2Container}
-            className="flex items-center justify-center w-full h-full"
-          >
-            <p className="flex items-end text-5xl text-gray-500">
-              CODE IS CRAFT
-            </p>
-            <Card
-              style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="GRASP"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="SOLID"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="SRP"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/csharp-pink.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/dotnet-pink.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/blazor-pink.png"
-              containerRef={grid2Container}
-            />
-          </div>
-        </div>
-        {/* Grid 3 - Glassmorphic */}
-        <div className="grid-3 glassmorphic-card">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">Availability</p>
-            <p className="subtext">
-              I can work anytime, flexible schedule for your project needs
-            </p>
-          </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
-        </div>
-        {/* Grid 4 - Glassmorphic */}
-        <div className="grid-4 glassmorphic-card">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Need to build something amazing?
-            </p>
-            <CopyEmailButton />
-          </div>
-        </div>
-        {/* Grid 5 */}
-        <div className="grid-default-color grid-5">
-          <div className="z-10 w-[50%]">
-            <p className="headText">Teck Stack</p>
-            <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools that
-              allow me to build robust and scalable applications
-            </p>
-          </div>
-          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
-            <Frameworks />
+
+          {/* Right Column - Content */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* About Me Description */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
+              <div className="space-y-4 text-gray-300">
+                <p className="text-lg leading-relaxed">
+                  I'm a passionate full-stack developer with a keen eye for design and a love for creating seamless digital experiences. With expertise spanning modern web technologies, UI/UX design, and creative production, I bring ideas to life through code and creativity.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  My approach combines technical excellence with aesthetic sensibility, ensuring that every project not only works flawlessly but looks stunning too. I believe in writing clean, maintainable code and designing interfaces that users love.
+                </p>
+              </div>
+            </div>
+
+            {/* Currently Learning Section */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-4">Currently Learning</h3>
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-blue-600/20 border border-blue-500 text-blue-300 rounded-full text-sm font-medium">
+                  WebAssembly
+                </span>
+                <span className="px-4 py-2 bg-blue-600/20 border border-blue-500 text-blue-300 rounded-full text-sm font-medium">
+                  Rust
+                </span>
+                <span className="px-4 py-2 bg-blue-600/20 border border-blue-500 text-blue-300 rounded-full text-sm font-medium">
+                  Three.js
+                </span>
+                <span className="px-4 py-2 bg-blue-600/20 border border-blue-500 text-blue-300 rounded-full text-sm font-medium">
+                  AI Integration
+                </span>
+              </div>
+            </div>
+
+            {/* Statistics Section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="text-3xl font-bold text-white mb-1">5+</div>
+                <div className="text-gray-400">Years Experience</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div className="text-3xl font-bold text-white mb-1">50+</div>
+                <div className="text-gray-400">Projects Completed</div>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div className="text-3xl font-bold text-white mb-1">∞</div>
+                <div className="text-gray-400">Coffee Consumed</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

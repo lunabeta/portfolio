@@ -2,6 +2,7 @@ import Particles from "./components/Particles";
 import Navbar from "./sections/navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
+import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Experiences from "./sections/Experiences";
 import Contact from "./sections/Contact";
@@ -25,15 +26,18 @@ const App = () => {
         <About />
       </ScrollReveal>
       <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.2}>
-        <Projects />
+        <Skills />
       </ScrollReveal>
       <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.4}>
-        <Experiences />
+        <Projects />
       </ScrollReveal>
       <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.6}>
-        <Contact />
+        <Experiences />
       </ScrollReveal>
       <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.8}>
+        <Contact />
+      </ScrollReveal>
+      <ScrollReveal animation="fadeInUp" duration={1.2} delay={1.0}>
         <Footer />
       </ScrollReveal>
     </div>
