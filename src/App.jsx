@@ -11,7 +11,7 @@ import { ScrollReveal } from "./components/ScrollReveal";
 
 const App = () => {
   return (
-    <div className="relative container mx-auto max-w-7xl">
+    <div className="relative">
       {/* Global star/particles background */}
       <Particles
         className="fixed inset-0 -z-50"
@@ -20,26 +20,36 @@ const App = () => {
         color={"#ffffff"}
         refresh
       />
-      <Navbar />
+
+      {/* Keep navbar centered within the content container */}
+      <div className="container mx-auto max-w-7xl">
+        <Navbar />
+      </div>
+
+      {/* Make Hero full-bleed width */}
       <Hero />
-      <ScrollReveal animation="fadeInUp" duration={1.2}>
-        <About />
-      </ScrollReveal>
-      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.2}>
-        <Skills />
-      </ScrollReveal>
-      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.4}>
-        <Projects />
-      </ScrollReveal>
-      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.6}>
-        <Experiences />
-      </ScrollReveal>
-      <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.8}>
-        <Contact />
-      </ScrollReveal>
-      <ScrollReveal animation="fadeInUp" duration={1.2} delay={1.0}>
-        <Footer />
-      </ScrollReveal>
+
+      {/* Constrain the rest of the sections */}
+      <div className="container mx-auto max-w-7xl">
+        <ScrollReveal animation="fadeInUp" duration={1.2}>
+          <About />
+        </ScrollReveal>
+        <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.2}>
+          <Skills />
+        </ScrollReveal>
+        <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.4}>
+          <Projects />
+        </ScrollReveal>
+        <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.6}>
+          <Experiences />
+        </ScrollReveal>
+        <ScrollReveal animation="fadeInUp" duration={1.2} delay={0.8}>
+          <Contact />
+        </ScrollReveal>
+        <ScrollReveal animation="fadeInUp" duration={1.2} delay={1.0}>
+          <Footer />
+        </ScrollReveal>
+      </div>
     </div>
   );
 };
