@@ -1,7 +1,3 @@
-import Stable3DHero from '../components/Stable3DHero';
-
-const Hero = () => {
-  return <Stable3DHero />;
-};
+import Hero from "../components/Hero";
 
 export default Hero;
