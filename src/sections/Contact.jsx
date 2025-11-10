@@ -50,7 +50,7 @@ const Contact = () => {
     }
   };
   return (
-    <section className="relative c-space section-spacing">
+    <section id="contact" className="relative c-space section-spacing">
       {showAlert && <Alert type={alertType} text={alertMessage} />}
       
       {/* Header */}
