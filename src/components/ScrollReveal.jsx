@@ -2,6 +2,11 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Ensure the plugin is registered once
+if (typeof window !== "undefined" && !gsap.core.globals().ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export const ScrollReveal = ({ 
   children, 
   animation = "fadeInUp",
@@ -60,7 +65,7 @@ export const ScrollReveal = ({
   }, [animation, delay, duration, distance]);
 
   return (
-    <div ref={elementRef} className={className}>
+    <div ref={elementRef} className={`${className} relative`}>
       {children}
     </div>
   );
