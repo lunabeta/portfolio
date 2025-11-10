@@ -124,27 +124,30 @@ export default function Hero() {
         stagger: 0.12,
       });
 
-      gsap.fromTo(
-        laptopRef.current,
-        { y: 40, rotateX: -20, rotateY: 10, opacity: 0 },
-        {
-          y: 0,
-          rotateX: 0,
-          rotateY: 0,
-          opacity: 1,
-          duration: 1.8,
-          ease: "power3.out",
-          delay: 0.3,
-        }
-      );
+      if (laptopRef.current) {
+        gsap.fromTo(
+          laptopRef.current,
+          { y: 40, rotateX: -20, rotateY: 10, opacity: 0 },
+          {
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            opacity: 1,
+            duration: 1.8,
+            ease: "power3.out",
+            delay: 0.3,
+          }
+        );
 
-      gsap.to(laptopRef.current, {
-        y: "+=15",
-        duration: 3,
-        yoyo: true,
-        repeat: -1,
-        ease: "sine.inOut",
-      });
+        gsap.to(laptopRef.current, {
+          y: "+=15",
+          duration: 3,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      }
+
     }, mainContainerRef);
 
     return () => ctx.revert();
@@ -173,8 +176,9 @@ export default function Hero() {
 
   return (
     <section
+      id="home"
       ref={mainContainerRef}
-      className="relative w-full h-screen overflow-hidden flex items-center justify-center"
+      className="relative w-full min-h-[80vh] md:h-screen overflow-hidden flex items-center justify-center"
     >
       {/* ✅ Fullscreen Background */}
       <img
@@ -191,7 +195,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* ✅ Hero Text */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center text-white px-6 mt-10">
+      <div ref={laptopRef} className="relative z-20 flex flex-col items-center justify-center text-center text-white px-6 mt-10">
         <h1 className="hero-el font-['General Sans'] text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">
           Betelhem Worku
         </h1>
@@ -203,7 +207,7 @@ export default function Hero() {
         {/* ✅ Only Resume Button */}
         <div className="hero-el mt-8 flex items-center justify-center">
           <a
-            href="https://flowcv.com/resume/k84ltmd3h21m"
+            href="https://flowcv.com/resume/ltar9meqwtfs"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-md px-8 py-3 text-sm md:text-base font-medium text-white/90 border border-white/20 hover:border-white/40 hover:bg-white/5 transition duration-200"
