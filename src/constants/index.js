@@ -257,7 +257,7 @@ export const experiences = [
   {
     title: "Full-Stack Developer / Data Recovery Specialist",
     job: "ProLab Techworks Solutions",
-    date: "2025–Present",
+    date: "05/2025– 09/2025",
     contents: [
       "Upgraded and maintained the company’s website using React.js, Laravel, and Firebase for secure and high-performance experiences.",
       "Implemented an AI-powered 'Ask Anything' feature and real-time search engine to enhance customer support.",
